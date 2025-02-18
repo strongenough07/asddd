@@ -1,0 +1,74 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Movie {
+  id              Int      @id @default(autoincrement())
+  slug            String   @unique
+  title           String
+  tagline         String?
+  poster          String
+  director        String
+  cast            String
+  writer          String
+  producer        String
+  editor          String
+  cinematography  String
+  genre           String
+  releaseDate     String
+  country         String
+  year            String
+  duration        String
+  translation     String
+  rating          String
+  ratingmovie       String[] @default([])
+  ratingsubs       String[] @default([])
+  trailerUrl      String
+  videoUrl        String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+
+model Serial {
+  id          Int      @id @default(autoincrement())
+  slug        String   @unique
+  title       String
+  tagline     String?
+  poster      String
+  director    String
+  cast        String
+  writer      String
+  producer    String
+  editor      String
+  cinematography String
+  genre       String
+  seasons     Int
+  episodes    Int?
+  releaseDate String
+  country     String
+  year        String
+  durationPerEpisode String
+  translation String
+  rating      String
+  ratingserial       String[] @default([])
+  ratingsubs       String[] @default([])
+  trailerUrl  String
+  streamingUrl Json
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Poll {
+  id          Int      @id @default(autoincrement())
+  poll       Json
+  trailerUrl  String
+  votes       Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
