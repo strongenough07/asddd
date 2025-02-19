@@ -13,7 +13,7 @@
           <input
             v-model="searchQuery"
             type="text"
-            placeholder="Search..."
+            placeholder="Търсене..."
             class="w-[calc(100%-1rem)]  px-4 py-1.5 rounded-xl border border-gray-200/20 bg-extralight text-white focus:outline-none focus:ring-2 focus:ring-orange/80"
             @input="handleSearch"
           />
@@ -24,7 +24,7 @@
             </li>
           </ul>
           <div v-else-if="searchQuery.length > 2 && searchResults?.results?.length === 0" class="p-2 text-gray-400">
-            No results found.
+            Няма намерени резултати.
           </div>
         </div>
         </div>

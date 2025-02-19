@@ -15,7 +15,7 @@
             </label>
             <button @click="showTrailer(poll.trailerUrl)"
               class="px-2 py-1 bg-orange hover:bg-amber-700 text-white rounded-md transition-colors">
-              Watch Trailer
+              Гледай Трейлър
             </button>
             <hr class="m-2 w-full border border-gray-700">
 
@@ -24,7 +24,7 @@
         <button
           class="w-full bg-orange hover:bg-amber-700 text-white font-bold py-3 px-6 rounded-lg mt-6 transition-colors duration-200 transform hover:scale-105"
           @click="handleVote" :disabled="voted">
-          {{ voted ? 'Voted!' : 'Cast Your Vote' }}
+          {{ voted ? 'Гласувахте!' : 'Гласувайте' }}
         </button>
       </div>
     </div>

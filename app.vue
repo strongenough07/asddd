@@ -20,12 +20,21 @@
 
 <script setup>
 useHead({
-  title: 'NextFlicks',
+  title: 'NextFlicks - Гледайте Филми и Сериали Онлайн Безплатно',
   meta: [
-    { name: 'description', content: 'Nextflicks is a movie and series streaming platform.' }
+    { name: 'description', content: 'Гледайте любимите си филми и сериали онлайн напълно безплатно с NextFlicks. Богата колекция от заглавия с високо качество и български субтитри.' },
+    { name: 'keywords', content: 'филми, сериали, онлайн филми, безплатно гледане, български субтитри, филми онлайн, сериали онлайн, гледай филми, гледай сериали, nextflicks' },
+    { property: 'og:title', content: 'NextFlicks - Гледайте Филми и Сериали Онлайн Безплатно' },
+    { property: 'og:description', content: 'Гледайте любимите си филми и сериали онлайн напълно безплатно с NextFlicks. Богата колекция от заглавия с високо качество и български субтитри.' },
+    { property: 'og:image', content: '/logo.webp' },
+    { property: 'og:url', content: 'https://nextflicks.net' },
+      { name: 'twitter:card', content: 'summary_large_image' },
+
+
   ],
   link: [
-    { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
+    { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+     { rel: 'canonical', href: 'https://nextflicks.net' },
   ]
 })
 </script>

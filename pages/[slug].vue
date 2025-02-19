@@ -11,7 +11,7 @@
 
             </div>
             <button @click="showTrailer = true" class="text-white bg-orange px-4 py-2 rounded-lg m-2">
-              Watch Trailer
+              Гледай Трейлър
             </button>
           </div>
           <div class="flex-1">
@@ -19,72 +19,72 @@
             <p class="text-gray-400 mb-4 md:mb-6">{{ movieData.tagline }}</p>
 
             <button @click="showDetails = !showDetails" class="w-full py-2 px-4 bg-extralight rounded-lg text-left md:hidden mb-4">
-              {{ showDetails ? 'Hide Details' : 'Show Details' }}
+              {{ showDetails ? 'Скрий Детайлите' : 'Покажи Детайлите' }}
             </button>
 
             <div :class="{'hidden md:grid': !showDetails}" class="grid grid-cols-1 md:grid-cols-2 gap-y-3 md:gap-y-4 text-sm">
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Director:</div>
+                <div class="font-semibold">Режисьор:</div>
                 <div>{{ movieData.director }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Cast:</div>
+                <div class="font-semibold">Актьорски състав:</div>
                 <div>{{ movieData.cast }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Writer:</div>
+                <div class="font-semibold">Сценарист:</div>
                 <div>{{ movieData.writer }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Producer:</div>
+                <div class="font-semibold">Продуцент:</div>
                 <div>{{ movieData.producer }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Editor:</div>
+                <div class="font-semibold">Редактор:</div>
                 <div>{{ movieData.editor }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Cinematography:</div>
+                <div class="font-semibold">Кинематография:</div>
                 <div>{{ movieData.cinematography }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Genre:</div>
+                <div class="font-semibold">Жанр:</div>
                 <div>{{ movieData.genre }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Release Date:</div>
+                <div class="font-semibold">Дата на издаване:</div>
                 <div>{{ movieData.releaseDate }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Country:</div>
+                <div class="font-semibold">Държава:</div>
                 <div>{{ movieData.country }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Year:</div>
+                <div class="font-semibold">Година:</div>
                 <div>{{ movieData.year }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Duration:</div>
+                <div class="font-semibold">Продължителност:</div>
                 <div>{{ movieData.duration }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Translation:</div>
+                <div class="font-semibold">Превод:</div>
                 <div>{{ movieData.translation }}</div>
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Rating:</div>
+                <div class="font-semibold">Рейтинг:</div>
                 <div>{{ movieData.rating }}</div>
               </div>
             </div>
@@ -96,7 +96,7 @@
             <iframe :src="movieData.videoUrl" width="100%" height="100%" allowfullscreen allowtransparency allow="autoplay" scrolling="no" frameborder="0" class="absolute inset-0"></iframe>
           </div>
           <div v-if="movieData.streamingUrl && movieData.streamingUrl.episodes" class="mb-8">
-            <h3 class="text-xl font-semibold mb-4">Select Episode</h3>
+            <h3 class="text-xl font-semibold mb-4">Избери Епизод</h3>
             <div class="flex flex-wrap gap-4">
               <button
                 v-for="(episodeUrl, index) in movieData.streamingUrl.episodes"
@@ -105,17 +105,17 @@
                 class="px-4 py-2 bg-orange text-white rounded-md hover:bg-orange/50 transition-colors duration-200"
                 :class="{ 'bg-amber-900': episodeUrl === movieData.videoUrl }"
               >
-                Episode {{ index + 1 }}
+                Епизод {{ index + 1 }}
               </button>
             </div>
           </div>
           <div class="space-y-4">
             <div class="mb-6 max-w-[300px]">
-              <h3 class="text-xl font-semibold mb-4">Ratings</h3>
+              <h3 class="text-xl font-semibold mb-4">Оценки</h3>
               <div class="flex flex-col gap-4">
                 <div>
                   <div class="flex justify-between mb-2">
-                    <span>Movie Quality</span>
+                    <span>Качество на Филма</span>
                     <span>{{ averageMovieRating }}/5</span>
                   </div>
                   <div class="w-full bg-gray-200 rounded-full h-2.5">
@@ -131,7 +131,7 @@
 
                 <div>
                   <div class="flex justify-between mb-2">
-                    <span>Subtitle Quality</span>
+                    <span>Качество на Субтитрите</span>
                     <span>{{ averageSubtitleRating }}/5</span>
                   </div>
                   <div class="w-full bg-gray-200 rounded-full h-2.5">
@@ -283,24 +283,33 @@ const movieData = computed(() => {
 });
 
 useHead(() => ({
-  title: movieData.value.title ? `${movieData.value.title} - My Movie App` : 'My Movie App',
+  title: movieData.value.title ? `${movieData.value.title} - Гледай Онлайн Филми и Сериали | NextFlicks` : 'Гледай Онлайн Филми и Сериали | NextFlicks',
   meta: [
     {
       name: 'description',
-      content: movieData.value.tagline || 'Watch movies and series online',
+      content: movieData.value.tagline ? `${movieData.value.title} (${movieData.value.year}) - ${movieData.value.tagline}. Гледайте онлайн на NextFlicks с български субтитри.` : `Гледайте ${movieData.value.title} (${movieData.value.year}) онлайн с български субтитри. Богат избор от филми и сериали.`,
     },
     {
       property: 'og:title',
-      content: movieData.value.title ? `${movieData.value.title} - My Movie App` : 'My Movie App',
+      content: movieData.value.title ? `${movieData.value.title} - Гледай Онлайн | NextFlicks` : 'Гледай Онлайн Филми и Сериали | NextFlicks',
     },
     {
       property: 'og:description',
-      content: movieData.value.tagline || 'Watch movies and series online',
+      content: movieData.value.tagline ? `${movieData.value.title} (${movieData.value.year}) - ${movieData.value.tagline}. Гледайте онлайн на NextFlicks с български субтитри.` : `Гледайте ${movieData.value.title} (${movieData.value.year}) онлайн с български субтитри. Богат избор от филми и сериали.`,
     },
     {
       property: 'og:image',
       content: movieData.value.poster || '/default-poster.jpg',
     },
+    {
+      property: 'og:url',
+      content: `https://nextflicks.net/${movieData.value.slug}`
+    },
+     { name: 'twitter:card', content: 'summary_large_image' },
+    {
+      name: 'keywords',
+      content: movieData.value.title ?  `${movieData.value.title}, филми, сериали, онлайн филми, безплатно гледане, български субтитри, филми онлайн, сериали онлайн, гледай филми, гледай сериали, nextflicks, ${movieData.value.genre}, ${movieData.value.director}` : 'филми, сериали, онлайн филми, безплатно гледане, български субтитри, филми онлайн, сериали онлайн, гледай филми, гледай сериали, nextflicks'
+    }
   ],
 }));
 
