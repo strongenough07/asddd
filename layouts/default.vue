@@ -4,7 +4,7 @@
     <header class="fixed top-0 left-0 w-full bg-extralight z-50 shadow-lg">
       <div class=" py-2 flex justify-between items-center">
         <div @click="$router.push('/')" class="flex items-center cursor-pointer relative">
-         <img src="~/public/2.png" class="w-48 h-12 object-cover" alt="" srcset="">
+         <img src="~/public/logo.webp" class="w-48 h-12 object-cover" alt="" srcset="">
         </div>
         <div>
         </div>

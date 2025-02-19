@@ -1,6 +1,6 @@
 <template>
-  <div class="container mx-auto px-4  flex flex-col">
-    <div class="flex justify-between items-center mb-4">
+  <div class="container mx-auto px-4  flex flex-col ">
+    <div class="flex justify-between items-center mb-4 ">
       <button disabled class="bg-extralight text-white px-4 py-1.5 rounded-xl disabled">Filter</button>
 
       <div class="flex space-x-4">
@@ -21,7 +21,7 @@
       <div v-if="activeTab === 'Movies'" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
 
         <div v-for="(movie, index) in movies" :key="index"
-          class="cursor-pointer bg-extralight rounded-lg overflow-hidden" @click="navigateTo(`/${movie.slug}`)">
+          class="cursor-pointer bg-extralight rounded-lg overflow-hidden h-auto" @click="navigateTo(`/${movie.slug}`)">
           <div class="m-1 mb-1 w-auto px-1 mx-auto ">
             <img :src="movie.poster" alt="Movie Poster" class="" />
 
@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div v-if="activeTab === 'Series'" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+      <div v-if="activeTab === 'Series'" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 ">
         <div v-for="(serie, index) in series" :key="index"
           class="cursor-pointer bg-extralight rounded-lg overflow-hidden" @click="navigateTo(`/${serie.slug}`)">
           <div class="m-1 mb-1 w-auto px-1 mx-auto ">
@@ -59,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div class="flex items-center justify-center mt-4" v-if="activeTab === 'Movies'">
+    <div class="flex items-center justify-center mt-4 " v-if="activeTab === 'Movies'">
       <button :disabled="currentPage === 1" @click="currentPage--"
         class="px-4 py-2 mx-1 bg-orange text-white rounded-lg disabled:bg-amber-700">
         Previous
@@ -70,7 +70,7 @@
         Next
       </button>
     </div>
-    <div class="flex  items-center justify-center mt-4" v-if="activeTab === 'Series'">
+    <div class="flex items-center justify-center mt-4" v-if="activeTab === 'Series'">
       <button :disabled="currentSeriesPage === 1" @click="currentSeriesPage--"
         class="px-4 py-2 mx-1 bg-orange text-white rounded disabled:opacity-50">
         Previous

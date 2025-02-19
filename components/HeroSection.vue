@@ -3,7 +3,7 @@
     <!-- Background image -->
     <div class="absolute inset-0 ">
       <img
-        src="/public/movie1.jpg"
+        src="/public/movie1.webp"
         alt="Luxury home"
         class="rounded-lg w-full h-full object-cover"
       />
