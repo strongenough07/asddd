@@ -72,7 +72,7 @@
         class="px-4 py-2 mx-1 bg-orange text-white rounded-lg disabled:bg-amber-700">
         Предишна
       </button>
-      <span class="mx-2 text-white">Page {{ currentPage }} of {{ totalMoviePages }}</span>
+      <span class="mx-2 text-white">Страница {{ currentPage }} от {{ totalMoviePages }}</span >
       <button :disabled="currentPage === totalMoviePages || movies.length < 12" @click="currentPage++"
         class="px-4 py-2 mx-1 bg-orange text-white rounded-lg disabled:opacity-50">
         Следваща
@@ -83,7 +83,7 @@
         class="px-4 py-2 mx-1 bg-orange text-white rounded disabled:opacity-50">
         Предишна
       </button>
-      <span class="mx-2 text-white">Page {{ currentSeriesPage }} of {{ totalSeriesPages }}</span>
+      <span class="mx-2 text-white">Страница {{ currentSeriesPage }} от {{ totalSeriesPages }}</span >
       <button :disabled="currentSeriesPage === totalSeriesPages || series.length < 12" @click="currentSeriesPage++"
         class="px-4 py-2 mx-1 bg-amber-700 text-white rounded disabled:opacity-50">
         Следваща

@@ -79,7 +79,7 @@
               </div>
 
               <div class="flex flex-col md:flex-row gap-2">
-                <div class="font-semibold">Превод:</div>
+                <div class="font-semibold">Език:</div>
                 <div>{{ movieData.translation }}</div>
               </div>
 
