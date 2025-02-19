@@ -1,5 +1,6 @@
 
 export function useMovies() {
+  const totalPagesMovies = ref(0);
   const movie = ref({});
   const movies = ref([]);
   const loading = ref(false);
@@ -10,6 +11,7 @@ export function useMovies() {
     error.value = null;
     try {
       const response = await useFetchApi(`/api/movies/movies?page=${page}`);
+      response && (totalPagesMovies.value = response.totalPages);
       if (response && response.movie) {
         movies.value = response.movie.map(movie => ({
           slug: movie.slug,
@@ -19,6 +21,7 @@ export function useMovies() {
           year: movie.year,
         }));
       }
+      
     } catch (err) {
       error.value = err;
     } finally {
@@ -46,6 +49,7 @@ export function useMovies() {
 
  
   return {
+    totalPagesMovies,
     movie,
     movies,
     loading,

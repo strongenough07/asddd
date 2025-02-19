@@ -17,7 +17,6 @@
     </div>
 
     <div>
-
       <div v-if="activeTab === 'Movies'" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
 
         <div v-for="(movie, index) in movies" :key="index"
@@ -87,9 +86,8 @@
 
 <script setup>
 
-const { movies, fetchMovies } = useMovies();
-const { series, fetchSerials } = useSerials();
-
+const { movies, fetchMovies, totalPagesMovies } = useMovies();
+const { series, fetchSerials, seriesTotalPage } = useSerials();
 const tabs = ['Movies', 'Series'];
 const activeTab = ref('Movies');
 
@@ -111,8 +109,8 @@ watch(currentSeriesPage, async (newCurrentSeriesPage) => {
 onMounted(async () => {
   await fetchSerials(currentSeriesPage.value);
   await fetchMovies(currentPage.value);
-  totalMoviePages.value = 10;
-  totalSeriesPages.value = 10;
+  totalMoviePages.value = totalPagesMovies.value;
+  totalSeriesPages.value = seriesTotalPage.value;
 });
 
 </script>

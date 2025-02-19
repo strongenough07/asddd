@@ -1,4 +1,5 @@
 export function useSerials() {
+  const seriesTotalPage = ref([]);
     const series = ref([]);
     const serial = ref({});
     const loading = ref(false);
@@ -9,6 +10,7 @@ export function useSerials() {
       error.value = null;
       try {
         const response = await useFetchApi(`/api/serials/serials?page=${page}`);
+        response && (seriesTotalPage.value = response.totalPages);
         if (response && response.serials) {
           series.value = response.serials.map(serial => ({
             slug: serial.slug,
@@ -43,6 +45,7 @@ export function useSerials() {
     };
   
     return {
+      seriesTotalPage,
       serial,
       series,
       loading,

@@ -9,14 +9,22 @@ export default defineEventHandler(async (event) => {
 
 
   try {
+    const movieNum = await getMovies(null, {
+      
+      
+    });
+    const totalPages = Math.ceil(movieNum.length / pageSize
+    );
+
     const movie = await getMovies(null, {
       orderBy: {
         id: 'desc',
       },
       skip: skip,
       take: pageSize,
+      
     });
-    return { movie };
+    return { movie, totalPages };
   } catch (error) {
     console.error(error);
     throw createError({ statusCode: 500, statusMessage: 'Could not get movies' });
