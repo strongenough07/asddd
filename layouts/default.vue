@@ -6,11 +6,19 @@
         <div @click="$router.push('/')" class="flex items-center cursor-pointer relative">
           <nuxt-img 
     src="/logo.webp" 
-    class="w-48 h-6 sm:h-6 md:h-7 lg:h-12 object-cover" 
+    class="w-48 h-6 sm:h-6 md:h-7 lg:h-12 object-cover hidden md:block" 
     alt="Logo" 
     format="webp" 
     preload 
-  /></div>
+  />
+  <nuxt-img 
+    src="/logo2.png" 
+    class="w-8 h-8 sm:block md:hidden lg:hidden object-cover ml-2" 
+    alt="Logo" 
+    format="webp" 
+    preload 
+  />
+</div>
         <div>
         </div>
         <div class=" w-[200px] md:w-[400px]"> 

@@ -24,6 +24,9 @@ export default defineNuxtConfig({
       include: ['Ripple', 'Tooltip']
     }
   },
+  nitro: {
+    compressPublicAssets: true,
+  },
   compressResponse: true,
   routeRules: {
     '**': { cors: true, headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } }

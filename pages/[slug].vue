@@ -7,7 +7,7 @@
         <div class="flex flex-col md:flex-row gap-6 p-4 md:p-8 items-center ">
           <div class="flex flex-col">
             <div class="w-full md:w-[300px] h-[400px] rounded-lg   group">
-              <img :src="movieData.poster" :alt="movieData.title" class="w-full h-full object-cover">
+              <nuxt-img :src="movieData.poster" :alt="movieData.title" class="w-full h-full object-cover"/>
 
             </div>
             <button @click="showTrailer = true" class="text-black bg-orange px-4 py-2 rounded-lg m-2">

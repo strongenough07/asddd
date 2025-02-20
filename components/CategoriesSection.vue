@@ -22,7 +22,7 @@
         <div v-for="(movie, index) in movies" :key="index"
           class="cursor-pointer bg-extralight rounded-lg overflow-hidden h-auto" @click="navigateTo(`/${movie.slug}`)">
           <div class="m-1 mb-1 w-auto px-1 mx-auto ">
-            <img :src="movie.poster" alt="Movie Poster" class="" />
+            <nuxt-img :src="movie.poster" alt="Movie Poster" class="" />
 
           </div>
           <div class="p-2">
@@ -47,7 +47,7 @@
         <div v-for="(serie, index) in series" :key="index"
           class="cursor-pointer bg-extralight rounded-lg overflow-hidden" @click="navigateTo(`/${serie.slug}`)">
           <div class="m-1 mb-1 w-auto px-1 mx-auto ">
-            <img :src="serie.poster" alt="Series Poster" class="" />
+            <nuxt-img :src="serie.poster" alt="Series Poster" class="" />
           </div>
           <div class="p-2">
             <h3 class="text-lg font-bold mb-2">{{ serie.title }}</h3>
