@@ -1,12 +1,12 @@
 <template>
   <div class="container mx-auto px-4  flex flex-col ">
     <div class="flex justify-between items-center mb-4 ">
-      <button disabled class="bg-extralight text-white px-4 py-1.5 rounded-xl disabled">Филтрирай</button>
+      <button disabled class="bg-extralight text-white px-2 py-0.5 md:px-2 md:py-1 text-sm md:text-base   rounded-xl disabled">Филтрирай</button>
 
       <div class="flex space-x-4">
 
         <button v-for="(tab, index) in tabs" :key="index"
-          :class="['px-4 py-1.5 rounded-xl', activeTab === tab ? 'bg-orange text-black' : 'bg-extralight text-white']"
+          :class="['px-2 py-0.5 md:px-2 md:py-1  rounded-xl text-sm md:text-base ', activeTab === tab ? 'bg-orange text-black' : 'bg-extralight text-white']"
           @click="activeTab = tab">
           {{ tab === 'Movies' ? 'Филми' : (tab === 'Series' ? 'Сериали' : tab) }}
         </button>
@@ -72,7 +72,7 @@
         class="px-4 py-2 mx-1 bg-orange text-white rounded-lg disabled:bg-amber-700">
         Предишна
       </button>
-      <span class="mx-2 text-white">Страница {{ currentPage }} от {{ totalMoviePages }}</span >
+      <span class="mx-2 text-white"> {{ currentPage }} от {{ totalMoviePages }}</span >
       <button :disabled="currentPage === totalMoviePages || movies.length < 12" @click="currentPage++"
         class="px-4 py-2 mx-1 bg-orange text-white rounded-lg disabled:opacity-50">
         Следваща
@@ -83,7 +83,7 @@
         class="px-4 py-2 mx-1 bg-orange text-white rounded disabled:opacity-50">
         Предишна
       </button>
-      <span class="mx-2 text-white">Страница {{ currentSeriesPage }} от {{ totalSeriesPages }}</span >
+      <span class="mx-2 text-white"> {{ currentSeriesPage }} от {{ totalSeriesPages }}</span >
       <button :disabled="currentSeriesPage === totalSeriesPages || series.length < 12" @click="currentSeriesPage++"
         class="px-4 py-2 mx-1 bg-amber-700 text-white rounded disabled:opacity-50">
         Следваща
