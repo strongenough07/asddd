@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     port: '80'
   },
 
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss','@nuxt/image'],
 
   primevue: {
     usePrimeVue: true,
@@ -24,6 +24,11 @@ export default defineNuxtConfig({
       include: ['Ripple', 'Tooltip']
     }
   },
+  compressResponse: true,
+  routeRules: {
+    '**': { cors: true, headers: { 'Cache-Control': 'public, max-age=31536000, immutable' } }
+  },
+  
 
   css: [
     '~/assets/scss/main.scss',

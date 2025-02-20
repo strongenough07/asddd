@@ -4,11 +4,16 @@
     <header class="fixed top-0 left-0 w-full bg-extralight z-50 shadow-lg">
       <div class=" py-2 flex justify-between items-center">
         <div @click="$router.push('/')" class="flex items-center cursor-pointer relative">
-         <img src="~/public/logo.webp" class="w-48 h-12 object-cover" alt="" srcset="">
-        </div>
+          <nuxt-img 
+    src="/logo.webp" 
+    class="w-48 h-6 sm:h-6 md:h-7 lg:h-12 object-cover" 
+    alt="Logo" 
+    format="webp" 
+    preload 
+  /></div>
         <div>
         </div>
-        <div class=" w-[400px]"> 
+        <div class=" w-[200px] md:w-[400px]"> 
           
           <input
             v-model="searchQuery"
