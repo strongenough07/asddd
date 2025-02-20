@@ -6,7 +6,7 @@
       <div class="flex space-x-4">
 
         <button v-for="(tab, index) in tabs" :key="index"
-          :class="['px-4 py-1.5 rounded-xl', activeTab === tab ? 'bg-orange text-white' : 'bg-extralight text-white']"
+          :class="['px-4 py-1.5 rounded-xl', activeTab === tab ? 'bg-orange text-black' : 'bg-extralight text-white']"
           @click="activeTab = tab">
           {{ tab === 'Movies' ? 'Филми' : (tab === 'Series' ? 'Сериали' : tab) }}
         </button>

@@ -1,5 +1,5 @@
 export function useSerials() {
-  const seriesTotalPage = ref([]);
+  const seriesTotalPage = ref(0);
     const series = ref([]);
     const serial = ref({});
     const loading = ref(false);

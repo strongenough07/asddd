@@ -10,7 +10,7 @@
               <img :src="movieData.poster" :alt="movieData.title" class="w-full h-full object-cover">
 
             </div>
-            <button @click="showTrailer = true" class="text-white bg-orange px-4 py-2 rounded-lg m-2">
+            <button @click="showTrailer = true" class="text-black bg-orange px-4 py-2 rounded-lg m-2">
               Гледай Трейлър
             </button>
           </div>
@@ -102,8 +102,8 @@
                 v-for="(episodeUrl, index) in movieData.streamingUrl.episodes"
                 :key="index"
                 @click="movieData.videoUrl = episodeUrl"
-                class="px-4 py-2 bg-orange text-white rounded-md hover:bg-orange/50 transition-colors duration-200"
-                :class="{ 'bg-amber-900': episodeUrl === movieData.videoUrl }"
+                class="px-2 py-0.5  text-black  rounded-md hover:bg-orange transition-colors duration-200"
+                :class="{ 'bg-amber-700 text-white': episodeUrl === movieData.videoUrl, 'bg-orange': episodeUrl !== movieData.videoUrl }"
               >
                 Епизод {{ index + 1 }}
               </button>

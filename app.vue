@@ -33,7 +33,7 @@ useHead({
 
   ],
   link: [
-    { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+    { rel: 'icon', type: 'image/png', href: '/favicon-96x96.png' },
      { rel: 'canonical', href: 'https://nextflicks.net' },
   ]
 })

@@ -1,11 +1,11 @@
 <template>
-  <div class=" m-2 relative h-[600px] bg-gray-900">
+  <div class=" m-2.5 relative h-[600px] bg-dark hidden md:block">
     <!-- Background image -->
     <div class="absolute inset-0 ">
       <img
         src="/public/movie1.webp"
         alt="Luxury home"
-        class="rounded-lg w-full h-full object-cover"
+        class="rounded-lg w-full h-full object-cover "
       />
     </div>
 
