@@ -69,23 +69,23 @@
     </div>
     <div class="flex items-center justify-center mt-4 " v-if="activeTab === 'Movies'">
       <button :disabled="currentPage === 1" @click="currentPage--"
-        class="px-4 py-2 mx-1 bg-orange text-white rounded-lg disabled:bg-amber-700">
+        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 bg-orange text-white rounded-lg disabled:bg-amber-700">
         Предишна
       </button>
       <span class="mx-2 text-white"> {{ currentPage }} от {{ totalMoviePages }}</span >
       <button :disabled="currentPage === totalMoviePages || movies.length < 12" @click="currentPage++"
-        class="px-4 py-2 mx-1 bg-orange text-white rounded-lg disabled:opacity-50">
+        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 bg-orange text-white rounded-lg disabled:opacity-50">
         Следваща
       </button>
     </div>
     <div class="flex items-center justify-center mt-4" v-if="activeTab === 'Series'">
       <button :disabled="currentSeriesPage === 1" @click="currentSeriesPage--"
-        class="px-4 py-2 mx-1 bg-orange text-white rounded disabled:opacity-50">
+        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 bg-orange text-white rounded disabled:opacity-50">
         Предишна
       </button>
       <span class="mx-2 text-white"> {{ currentSeriesPage }} от {{ totalSeriesPages }}</span >
       <button :disabled="currentSeriesPage === totalSeriesPages || series.length < 12" @click="currentSeriesPage++"
-        class="px-4 py-2 mx-1 bg-amber-700 text-white rounded disabled:opacity-50">
+        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 bg-amber-700 text-white rounded disabled:opacity-50">
         Следваща
       </button>
     </div>
