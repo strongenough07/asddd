@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
 
     try {
       const movie = await getMovie(query.slug);
-  
+      
       return { movie };
     } catch (error) {
       console.error(error);

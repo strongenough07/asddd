@@ -11,6 +11,7 @@ export function useMovies() {
     error.value = null;
     try {
       const response = await useFetchApi(`/api/movies/movies?page=${page}`);
+      console.log(response);
       response && (totalPagesMovies.value = response.totalPages);
       if (response && response.movie) {
         movies.value = response.movie.map(movie => ({

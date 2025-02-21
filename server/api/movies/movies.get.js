@@ -9,12 +9,9 @@ export default defineEventHandler(async (event) => {
 
 
   try {
-    const movieNum = await getMovies(null, {
-      
+    const totalPages = await getMovies(null, {
       
     });
-    const totalPages = Math.ceil(movieNum.length / pageSize
-    );
 
     const movie = await getMovies(null, {
       orderBy: {
@@ -24,7 +21,8 @@ export default defineEventHandler(async (event) => {
       take: pageSize,
       
     });
-    return { movie, totalPages };
+   
+    return { movie , totalPages: Math.ceil(totalPages.length / pageSize) };
   } catch (error) {
     console.error(error);
     throw createError({ statusCode: 500, statusMessage: 'Could not get movies' });

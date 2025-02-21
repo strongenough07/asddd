@@ -9,17 +9,20 @@ export default defineEventHandler(async (event) => {
 
 
   try {
-    const serialsNum = await getSerials();
-    const totalPages = Math.ceil(serialsNum.length / pageSize);
+    const totalPages = await getSerials(null, {
+      
+    });
+
     const serials = await getSerials(null, {
       orderBy: {
         id: 'desc',
       },
       skip: skip,
       take: pageSize,
+      
     });
-
-    return { serials, totalPages };
+   
+    return { serials , totalPages: Math.ceil(totalPages.length / pageSize) };
   } catch (error) {
     console.error(error);
     throw createError({ statusCode: 500, statusMessage: 'Could not get serials' });
