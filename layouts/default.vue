@@ -27,7 +27,7 @@
             v-model="searchQuery"
             type="text"
             placeholder="Търсене..."
-            class="w-[calc(100%-1rem)]  px-4 py-1.5 rounded-xl border border-gray-200/20 bg-extralight text-white focus:outline-none focus:ring-2 focus:ring-orange/80"
+            class="w-[calc(100%-1rem)] text-sm md:text-base px-2 py-1 md:px-2.5 md:py-1.5 rounded-xl border border-gray-200/20 bg-extralight text-white focus:outline-none focus:ring-2 focus:ring-orange/80"
             @input="handleSearch"
           />
         <div  class="absolute top-14 right-22 max-w-[100%] bg-extralight rounded-lg shadow-md z-50 border border-zinc-200/20" >
