@@ -7,18 +7,18 @@
         <div class="flex flex-col md:flex-row gap-6 p-4 md:p-8 items-center ">
           <div class="flex flex-col">
             <div class="w-full md:w-[300px] h-[400px] rounded-lg   group">
-              <nuxt-img :src="movieData.poster" :alt="movieData.title" class="w-full h-full object-cover"/>
+              <img :src="`/${movie ? 'movies' : 'serials'}/${movieData.poster}`" :alt="movieData.title" width="300" height="400" class="w-full h-full object-cover"/>
 
             </div>
-            <button @click="showTrailer = true" class="text-black bg-orange px-4 py-2 rounded-lg m-2">
+            <button @click="showTrailer = true" class="text-black bg-orange px-2 py-1 rounded-lg m-2 md:px-4 md:py-2 text-sm md:text-base">
               Гледай Трейлър
             </button>
           </div>
           <div class="flex-1">
-            <h1 class="text-2xl md:text-3xl font-bold mb-2 md:mb-4">{{ movieData.title }}</h1>
-            <p class="text-gray-400 mb-4 md:mb-6">{{ movieData.tagline }}</p>
+            <h1 class="text-xl md:text-2xl font-bold mb-2 md:mb-4 ">{{ movieData.title }}</h1>
+            <p class="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">{{ movieData.tagline }}</p>
 
-            <button @click="showDetails = !showDetails" class="w-full py-2 px-4 bg-extralight rounded-lg text-left md:hidden mb-4">
+            <button @click="showDetails = !showDetails" class="w-full py-2 px-4 bg-extralight rounded-lg text-left md:hidden mb-4 text-sm ">
               {{ showDetails ? 'Скрий Детайлите' : 'Покажи Детайлите' }}
             </button>
 
@@ -111,10 +111,10 @@
           </div>
           <div class="space-y-4">
             <div class="mb-6 max-w-[300px]">
-              <h3 class="text-xl font-semibold mb-4">Оценки</h3>
+              <h3 class="text-base md:text-lg font-semibold mb-4">Оценки</h3>
               <div class="flex flex-col gap-4">
                 <div>
-                  <div class="flex justify-between mb-2">
+                  <div class="flex justify-between mb-2 text-sm md:text-base">
                     <span>Качество на Филма</span>
                     <span>{{ averageMovieRating }}/5</span>
                   </div>
@@ -130,7 +130,7 @@
                 </div>
 
                 <div>
-                  <div class="flex justify-between mb-2">
+                  <div class="flex justify-between mb-2 text-sm md:text-base">
                     <span>Качество на Субтитрите</span>
                     <span>{{ averageSubtitleRating }}/5</span>
                   </div>

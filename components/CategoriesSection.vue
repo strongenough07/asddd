@@ -22,7 +22,7 @@
         <div v-for="(movie, index) in movies" :key="index"
           class="cursor-pointer bg-extralight rounded-lg overflow-hidden h-auto" @click="navigateTo(`/${movie.slug}`)">
           <div class="m-1 mb-1 w-auto px-1 mx-auto ">
-            <nuxt-img  :src="`/movies/${movie.poster}`" alt="Movie Poster" class="" />
+            <img  :src="`/movies/${movie.poster}`" :alt="movie.title" class="" width="300" height="400"/>
 
           </div>
           <div class="p-2">
@@ -48,7 +48,7 @@
           class="cursor-pointer bg-extralight rounded-lg overflow-hidden" @click="navigateTo(`/${serie.slug}`)">
           <div class="m-1 mb-1 w-auto px-1 mx-auto ">
 
-            <nuxt-img :src="`/serials/${serie.poster}`" alt="Series Poster" class="" loading="lazy" />
+            <img :src="`/serials/${serie.poster}`" :alt="serie.title" class="" width="300" height="400" />
           </div>
           <div class="p-2">
             <h3 class="text-lg font-bold mb-2">{{ serie.title }}</h3>
@@ -70,23 +70,23 @@
     </div>
     <div class="flex items-center justify-center mt-4 " v-if="activeTab === 'Movies'">
       <button :disabled="currentPage === 1" @click="currentPage--"
-        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 text-sm md:text-base bg-orange text-white rounded-lg disabled:bg-amber-700">
+        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 text-sm md:text-base bg-orange text-black rounded-lg disabled:bg-amber-700">
         Предишна
       </button>
       <span class="mx-2 text-white text-sm md:text-base"> {{ currentPage }} от {{ totalMoviePages }}</span >
       <button :disabled="currentPage === totalMoviePages || movies.length < 12" @click="currentPage++"
-        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 text-sm md:text-base bg-orange text-white rounded-lg disabled:opacity-50">
+        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 text-sm md:text-base bg-orange text-black rounded-lg disabled:opacity-50">
         Следваща
       </button>
     </div>
     <div class="flex items-center justify-center mt-4" v-if="activeTab === 'Series'">
       <button :disabled="currentSeriesPage === 1" @click="currentSeriesPage--"
-        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 text-sm md:text-base bg-orange text-white rounded disabled:opacity-50">
+        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 text-sm md:text-base bg-orange text-black rounded disabled:opacity-50">
         Предишна
       </button>
       <span class="mx-2 text-white text-sm md:text-base"> {{ currentSeriesPage }} от {{ totalSeriesPages }}</span >
       <button :disabled="currentSeriesPage === totalSeriesPages || series.length < 12" @click="currentSeriesPage++"
-        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 text-sm md:text-base bg-amber-700 text-white rounded disabled:opacity-50">
+        class="px-2 py-0.5 md:px-2 md:py-1 mx-1 text-sm md:text-base bg-amber-700 text-black rounded disabled:opacity-50">
         Следваща
       </button>
     </div>
@@ -116,7 +116,7 @@ watch(currentSeriesPage, async (newCurrentSeriesPage) => {
   await fetchSerials(newCurrentSeriesPage);
 });
 
-onMounted(async () => {
+onBeforeMount(async () => {
   await fetchSerials(currentSeriesPage.value);
   await fetchMovies(currentPage.value);
   totalMoviePages.value = totalPagesMovies.value;

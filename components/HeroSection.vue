@@ -4,8 +4,10 @@
     <div class="absolute inset-0 ">
       <img
         src="/public/movie1.webp"
-        alt="Luxury home"
+        alt="Hero image"
         class="rounded-lg w-full h-full object-cover "
+        width="1920"
+        height="1080"
       />
     </div>
 

@@ -4,16 +4,20 @@
     <header class="fixed top-0 left-0 w-full bg-extralight z-50 shadow-lg">
       <div class=" py-2 flex justify-between items-center">
         <div @click="$router.push('/')" class="flex items-center cursor-pointer relative">
-          <nuxt-img 
+          <img 
     src="/logo.webp" 
     class="w-48 h-6 sm:h-6 md:h-7 lg:h-12 object-cover hidden md:block" 
+    width="100"
+    height="100"
     alt="Logo" 
     format="webp" 
     preload 
   />
-  <nuxt-img 
-    src="/logo2.png" 
+  <img 
+    src="/logo2.webp" 
     class="w-8 h-8 sm:block md:hidden lg:hidden object-cover ml-2" 
+    width="50"
+    height="50"
     alt="Logo" 
     format="webp" 
     preload 
