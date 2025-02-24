@@ -2,9 +2,12 @@ import { getMovie }  from '~~/server/db/movies';
 
 export default defineEventHandler(async (event) => {
     const query = getQuery(event)
-
     try {
       const movie = await getMovie(query.slug);
+
+      if (!movie) {
+        return { movie: null };
+      }
       
       return { movie };
     } catch (error) {

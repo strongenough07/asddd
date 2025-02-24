@@ -19,6 +19,11 @@
 </template>
 
 <script setup>
+const router = useRouter();
+router.onError((err, to) => {
+console.log(err)
+  
+});
 useHead({
   title: 'NextFlicks - Гледайте Филми и Сериали Онлайн Безплатно',
   meta: [

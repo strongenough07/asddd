@@ -175,7 +175,7 @@
 import { onBeforeMount } from 'vue';
 const showTrailer = ref(false);
 const showDetails = ref(false);
-const isLoading = ref(false);
+const isLoading = ref(true);
 const route = useRoute();
 const router = useRouter();
 const slug = route.params.slug;
@@ -270,16 +270,28 @@ const { serial , fetchSerial } = useSerials();
 
 
 onBeforeMount(async () => {
-  
-    isLoading.value = true;
+  try {
     await Promise.all([fetchMovie(slug), fetchSerial(slug)]);
-    isLoading.value = false;
-  
+  } catch (error) {
+      console.error("Failed to fetch movie or serial:", error);
+  } finally {
+    
+  }
 });
 
 const movieData = computed(() => {
 
   return movie.value || serial.value || {};
+});
+
+watch(movieData, (newMovieData) => {
+  isLoading.value = true;
+
+  if (Object.keys(newMovieData).length === 0) {
+    router.push('/');
+  } else {
+      isLoading.value = false;
+  }
 });
 
 useHead(() => ({

@@ -5,6 +5,10 @@ export default defineEventHandler(async (event) => {
 
     try {
       const serial = await getSerial(query.slug);
+
+      if (!serial) {
+        return { serial: null };
+      }
   
       return { serial };
     } catch (error) {
