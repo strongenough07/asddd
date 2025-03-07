@@ -7,7 +7,7 @@
         <div class="flex flex-col md:flex-row gap-6 p-4 md:p-8 items-center ">
           <div class="flex flex-col">
             <div class="w-full mx-auto max-w-[250px] max-h-[400px] lg:max-w-[300px] lg:max-h-[450px] rounded-lg   group">
-              <img :src="`/${movie ? 'movies' : 'serials'}/${movieData.poster}`" :alt="movieData.title" width="300"
+              <img :src="`/api/images/${movieData.poster}`" :alt="movieData.title" width="300"
                 height="400" class="w-full h-full object-center rounded-lg" />
 
             </div>

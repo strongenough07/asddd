@@ -40,7 +40,6 @@ export function usePoll(pollId) {
 }
 
 export const votedApi = async (movie) => {
-  console.log('movie', movie);
   try {
     await fetch(`/api/poll/`, {
       method: 'POST',

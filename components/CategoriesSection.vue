@@ -22,7 +22,7 @@
         <div v-for="(movie, index) in movies" :key="index"
           class="cursor-pointer bg-extralight rounded-lg overflow-hidden h-auto" @click="navigateTo(`/${movie.slug}`)">
           <div class="mx-auto max-w-[250px] max-h-[500px]  lg:max-w-[250px] lg:max-h-[450px] ">
-            <img  :src="`/movies/${movie.poster}`" :alt="movie.title" class="w-full h-full object-center rounded-lg" width="300" height="400" />
+            <img  :src="`/api/images/${movie.poster}`" :alt="movie.title" class="w-full h-full object-center rounded-lg" width="300" height="400" />
 
           </div>
           <div class="p-2 text-center">
@@ -48,7 +48,7 @@
           class="cursor-pointer bg-extralight rounded-lg overflow-hidden" @click="navigateTo(`/${serie.slug}`)">
           <div class="mx-auto max-w-[250px] max-h-[500px]  lg:max-w-[250px] lg:max-h-[450px]">
 
-            <img :src="`/serials/${serie.poster}`" :alt="serie.title" class="w-full h-full object-center rounded-lg" width="300" height="400" />
+            <img :src="`/api/images/${serie.poster}`" :alt="serie.title" class="w-full h-full object-center rounded-lg" width="300" height="400" />
           </div>
           <div class="p-2">
             <h3 class="text-lg font-bold mb-2">{{ serie.title }}</h3>
