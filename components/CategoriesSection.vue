@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-4  flex flex-col ">
+  <div class=" mx-auto px-4  flex flex-col ">
     <div class="flex justify-between items-center mb-4 ">
       <button disabled class="bg-extralight text-white px-2 py-0.5 md:px-2 md:py-1 text-sm md:text-base   rounded-xl disabled">Филтрирай</button>
 
@@ -17,16 +17,16 @@
     </div>
 
     <div>
-      <div v-if="activeTab === 'Movies'" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+      <div v-if="activeTab === 'Movies'" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
 
         <div v-for="(movie, index) in movies" :key="index"
           class="cursor-pointer bg-extralight rounded-lg overflow-hidden h-auto" @click="navigateTo(`/${movie.slug}`)">
-          <div class="m-1 mb-1 w-auto px-1 mx-auto ">
-            <img  :src="`/movies/${movie.poster}`" :alt="movie.title" class="" width="300" height="400"/>
+          <div class="mx-auto max-w-[250px] max-h-[500px]  lg:max-w-[250px] lg:max-h-[450px] ">
+            <img  :src="`/movies/${movie.poster}`" :alt="movie.title" class="w-full h-full object-center rounded-lg" width="300" height="400" />
 
           </div>
-          <div class="p-2">
-            <h3 class="text-lg font-bold mb-2">{{ movie.title }}</h3>
+          <div class="p-2 text-center">
+            <h3 class="text-lg font-bold mb-2 text-nowrap">{{ movie.title }}</h3>
             <div class="flex  justify-between">
               <div class="flex flex-row space-x-2">
 
@@ -43,12 +43,12 @@
         </div>
       </div>
 
-      <div v-if="activeTab === 'Series'" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 ">
+      <div v-if="activeTab === 'Series'" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 ">
         <div v-for="(serie, index) in series" :key="index"
           class="cursor-pointer bg-extralight rounded-lg overflow-hidden" @click="navigateTo(`/${serie.slug}`)">
-          <div class="m-1 mb-1 w-auto px-1 mx-auto ">
+          <div class="mx-auto max-w-[250px] max-h-[500px]  lg:max-w-[250px] lg:max-h-[450px]">
 
-            <img :src="`/serials/${serie.poster}`" :alt="serie.title" class="" width="300" height="400" />
+            <img :src="`/serials/${serie.poster}`" :alt="serie.title" class="w-full h-full object-center rounded-lg" width="300" height="400" />
           </div>
           <div class="p-2">
             <h3 class="text-lg font-bold mb-2">{{ serie.title }}</h3>
